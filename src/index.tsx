@@ -3,12 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// Import DAppProvider
+import { DAppProvider } from "@usedapp/core";
+import styled from 'styled-components';
 
+const BgWrapper = styled.div`
+  padding-top: 50px;
+  background-color: #1a202c;
+`
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <DAppProvider config={{}}>
+      <BgWrapper>
+        <App />
+        </BgWrapper>
+      </DAppProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
